@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Urban Eco Route | Zhuhai</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="./style.css" />
+  <script defer src="./js/core.js"></script>
+  <script defer src="./js/route-data.js"></script>
+  <script defer src="./js/route-config.js"></script>
+  <script defer src="./js/legend-and-guides.js"></script>
+  <script defer src="./js/checklists-and-landing.js"></script>
+  <script defer src="./js/media-viewers.js"></script>
+  <script defer src="./js/stop-rendering.js"></script>
+  <script defer src="./js/map-routing.js"></script>
+  <script defer src="./js/utility-ui.js"></script>
+  <script defer src="./js/init.js"></script>
+</head>
+<body>
+  <section id="landingView" class="landingView">
+    <div class="landingShell">
+      <header class="siteHeader cardLike">
+        <div class="brandLockup">
+          <img class="brandLogo" src="./assets/icons/logo.png" alt="Roots &amp; Routes sustainable discovery logo" />
+          <div class="brandText">
+            <strong>Zhuhai</strong>
+            <span>One-day sustainable discovery route</span>
+          </div>
+        </div>
+        <nav class="siteNavLinks" aria-label="Landing navigation">
+          <a href="#landingHighlights">Highlights</a>
+          <a href="#websiteToolsSection">Tools</a>
+          <a href="#itinerarySection">Itinerary</a>
+        </nav>
+        <button id="landingGoToMapBtn" class="primaryBtn" type="button">Open route on map</button>
+      </header>
+
+      <section class="heroSection cardLike">
+        <div class="heroCopy">
+          <span class="eyebrow">Interactive travel guide</span>
+          <h1>Explore Zhuhai in one sustainable day.</h1>
+          <p class="landingLead">Browse museums, planning exhibits, wetland habitats, and a short trail, then follow the route or build your own.</p>
+          <div class="heroActions">
+            <button id="landingPreviewBtn" class="ghostBtn heroGhostBtn" type="button">Preview itinerary</button>
+          </div>
+        </div>
+
+        <div class="heroVisual">
+          <article class="heroImageCard">
+            <img src="./assets/photos/zhuhai_museum/20260425_133116.jpg" alt="Zhuhai Museum" />
+            <div class="heroImageOverlay">
+              <span class="heroImageTag">Cultural starting point</span>
+              <strong>Zhuhai Museum and the city waterfront</strong>
+            </div>
+          </article>
+          <article class="heroRouteCard">
+            <img class="heroRouteLogo" src="./assets/icons/logo.png" alt="Roots &amp; Routes logo" />
+            <div class="sectionKicker">Featured journey</div>
+            <h2 id="landingSelectedDay">One-day Zhuhai route</h2>
+            <p id="landingSelectedSummary">Museum, Hengqin planning, wetland ecology, and a light trail linked into one lower-impact day.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="landingHighlights" class="highlightsSection">
+        <article class="imageScrollerCard cardLike">
+          <div class="sectionHead">
+            <div>
+              <div class="sectionKicker">Along the route</div>
+              <h2>Places along the journey</h2>
+            </div>
+          </div>
+          <div class="landingPhotoRailViewport">
+            <div class="landingPhotoRail">
+              <article class="landingPhotoTile">
+                <img src="./assets/photos/zhuhai_museum/20260425_134626.jpg" alt="Zhuhai Museum interior" />
+                <div><strong>Zhuhai Museum</strong><span>City history and culture</span></div>
+              </article>
+              <article class="landingPhotoTile">
+                <img src="./assets/photos/heng-qin_planning_exhibition/IMG_1953.JPG" alt="Hengqin Planning Exhibition" />
+                <div><strong>Hengqin Planning</strong><span>Urban development exhibit</span></div>
+              </article>
+              <article class="landingPhotoTile">
+                <img src="./assets/photos/heng-qun_national_wetland_park/IMG_1984.JPG" alt="Hengqin National Wetland Park" />
+                <div><strong>Wetland Park</strong><span>Mangrove and bird habitat</span></div>
+              </article>
+              <article class="landingPhotoTile">
+                <img src="./assets/photos/xiang-shan_trail/IMG_2024.JPG" alt="Xiangshan Trail" />
+                <div><strong>Xiangshan Trail</strong><span>Short nature walk</span></div>
+              </article>
+              <article class="landingPhotoTile" aria-hidden="true">
+                <img src="./assets/photos/zhuhai_museum/photo_2026-04-27_01-00-25.jpg" alt="" />
+                <div><strong>Zhuhai Museum</strong><span>City history and culture</span></div>
+              </article>
+              <article class="landingPhotoTile" aria-hidden="true">
+                <img src="./assets/photos/heng-qin_planning_exhibition/IMG_1960.JPG" alt="" />
+                <div><strong>Hengqin Planning</strong><span>Urban development exhibit</span></div>
+              </article>
+              <article class="landingPhotoTile" aria-hidden="true">
+                <img src="./assets/photos/heng-qun_national_wetland_park/IMG_1988.JPG" alt="" />
+                <div><strong>Wetland Park</strong><span>Mangrove and bird habitat</span></div>
+              </article>
+              <article class="landingPhotoTile" aria-hidden="true">
+                <img src="./assets/photos/xiang-shan_trail/IMG_2028.JPG" alt="" />
+                <div><strong>Xiangshan Trail</strong><span>Short nature walk</span></div>
+              </article>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="websiteToolsSection" class="websiteToolsSection">
+        <article class="mapShowcaseCard cardLike">
+          <div class="mapShowcaseBackdrop"></div>
+          <div class="mapShowcaseContent">
+            <div class="sectionKicker">How it works</div>
+            <h2>Use the map like a trip planner.</h2>
+            <p>Filter stop types, open landmark pages, review local photos, and save your own route as you go.</p>
+            <div class="featureChips">
+              <span>Legend filters by stop type</span>
+              <span>Ordered to-do list</span>
+              <span>Single-day suggested flow</span>
+              <span>Transport and facility popups</span>
+              <span>Photo galleries and 360 views</span>
+              <span>Optional hiking add-ons</span>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="itinerarySection" class="itinerarySection">
+        <div class="sectionHead itineraryHead">
+          <div>
+            <div class="sectionKicker">Suggested itinerary</div>
+            <h2>Begin with a clear one-day route</h2>
+          </div>
+          <p>Preview the route, then keep it or change it.</p>
+        </div>
+
+        <div class="landingDays">
+          <article class="dayCard" id="dayCard-day1">
+            <button class="dayCardHeader" type="button" data-day-toggle="day1" aria-expanded="false">
+              <div>
+                <div class="dayCardKicker">Suggested itinerary</div>
+                <h2>One-day Zhuhai sustainable trip</h2>
+                <p>Museum, Hengqin planning, wetland ecology, and a short trail.</p>
+              </div>
+              <span class="dayCardChevron">+</span>
+            </button>
+            <div class="dayCardBody hidden" id="dayCardBody-day1">
+              <div class="landingPlan" id="landingPlan-day1"></div>
+              <button class="openMapBtn" type="button" data-open-map="day1">Open route on map</button>
+            </div>
+          </article>
+
+        </div>
+      </section>
+    </div>
+  </section>
+
+    <section id="mapView" class="mapView hidden">
+    <main class="layout mapOnlyLayout">
+      <section id="map"></section>
+      <div id="mobileBackdrop" class="mobileBackdrop"></div>
+
+      <button id="menuToggleBtn" class="fabBtn menuFab" aria-label="Open map filters">
+        <span>☰</span>
+      </button>
+      <button id="todoToggleBtn" class="fabBtn todoFab desktopOnly" aria-label="Open route to-do list">
+        ✓
+      </button>
+      <button id="suggestedToggleBtn" class="fabBtn suggestedFab desktopOnly" aria-label="Open suggested itinerary">
+        ✦
+      </button>
+
+      <div class="floatingControls" role="group" aria-label="Map controls">
+        <button id="backToLandingBtn" class="pillBtn">← Intro</button>
+        <button id="day1Btn" class="pillBtn active">Zhuhai Route</button>
+      </div>
+
+      <aside id="legendDrawer" class="overlayDrawer legendDrawer hidden desktopOnly">
+        <div class="drawerHead">
+          <div>
+            <div class="legendEyebrow">Map legend</div>
+            <h3>Show or hide categories</h3>
+          </div>
+          <button id="legendCloseBtn" class="ghostBtn small">Close</button>
+        </div>
+        <div class="legendStaticList" id="legendStaticList"></div>
+        <div class="legendBulkActions">
+          <button id="legendSelectAllBtn" class="ghostBtn small" type="button">Select all</button>
+          <button id="legendClearAllBtn" class="ghostBtn small" type="button">Clear all</button>
+        </div>
+        <div class="drawerSectionTitle">Visible on map</div>
+        <div id="legendFilters" class="legendFilters legendFiltersList"></div>
+      </aside>
+
+      <aside id="todoDrawer" class="overlayDrawer todoDrawer hidden desktopOnly">
+        <div class="drawerHead">
+          <div>
+            <div class="legendEyebrow">Your route</div>
+            <h3>Route to-do list</h3>
+          </div>
+          <button id="todoCloseBtn" class="ghostBtn small">Close</button>
+        </div>
+        <div class="todoBulkActions">
+          <button id="todoClearAllBtn" class="ghostBtn small" type="button">Deselect all</button>
+        </div>
+        <div id="routeChecklist" class="checkList"></div>
+      </aside>
+
+      <aside id="suggestedDrawer" class="overlayDrawer suggestedDrawer hidden desktopOnly">
+        <div class="drawerHead">
+          <div>
+            <div class="legendEyebrow">Suggested itinerary</div>
+            <h3>Follow our recommended flow</h3>
+          </div>
+          <button id="suggestedCloseBtn" class="ghostBtn small">Close</button>
+        </div>
+        <div id="suggestedChecklist" class="checkList"></div>
+      </aside>
+
+      <button id="mobileFilterFab" class="fabBtn utilityFab mobileOnly" aria-label="Open map filters">☰</button>
+      <button id="mobileTodoFab" class="fabBtn utilityFab secondary mobileOnly" aria-label="Open route to-do list">✓</button>
+      <button id="mobileSuggestedFab" class="fabBtn utilityFab tertiary mobileOnly" aria-label="Open suggested itinerary">✦</button>
+
+      <section id="mobileUtilitySheet" class="utilitySheet mobileOnly hidden">
+        <div id="utilitySheetHandle" class="sheetHandle"></div>
+        <div class="utilitySheetHeader">
+          <div>
+            <div id="utilitySheetEyebrow" class="legendEyebrow">Map legend</div>
+            <h3 id="utilitySheetTitle">Show or hide categories</h3>
+          </div>
+          <button id="mobileUtilityCloseBtn" class="mobileCloseBtn" aria-label="Close">✕</button>
+        </div>
+        <div class="utilityTabs">
+          <button id="utilityTabFilters" class="utilityTab active">Filters</button>
+          <button id="utilityTabTodo" class="utilityTab">To-do list</button>
+          <button id="utilityTabSuggested" class="utilityTab">Suggested</button>
+        </div>
+        <div id="utilityFiltersPane" class="utilityPane">
+          <div id="mobileLegendStaticList" class="legendStaticList compact"></div>
+          <div class="legendBulkActions compact">
+            <button id="mobileLegendSelectAllBtn" class="ghostBtn small" type="button">Select all</button>
+            <button id="mobileLegendClearAllBtn" class="ghostBtn small" type="button">Clear all</button>
+          </div>
+          <div id="mobileLegendFilters" class="legendFilters legendFiltersList"></div>
+        </div>
+        <div id="utilityTodoPane" class="utilityPane hidden">
+          <div class="todoBulkActions compact">
+            <button id="mobileTodoClearAllBtn" class="ghostBtn small" type="button">Deselect all</button>
+          </div>
+          <div id="mobileChecklist" class="checkList"></div>
+        </div>
+        <div id="utilitySuggestedPane" class="utilityPane hidden">
+          <div id="mobileSuggestedChecklist" class="checkList"></div>
+        </div>
+      </section>
+
+      <section id="stopPage" class="stopPage hidden" aria-hidden="true">
+        <div class="stopPageShell">
+          <div class="stopPageTopbar">
+            <button id="stopPageBackBtn" class="ghostBtn">← Back to map</button>
+            <button id="stopPageIntroBtn" class="ghostBtn">Intro</button>
+          </div>
+          <div class="stopPageGrid">
+            <div class="stopPageMain">
+              <div class="stopPageHero card">
+                <div id="badge" class="badge">One-day Zhuhai route</div>
+                <h1 id="stopTitle">Stop title</h1>
+                <p id="stopSubtitle" class="muted">Short subtitle</p>
+                <button id="stopTodoBtn" class="stopTodoBtn" type="button">✓ Add to to-do list</button>
+              </div>
+
+              <section class="card">
+                <h3>About this stop</h3>
+                <p id="stopStory"></p>
+              </section>
+
+              <section id="stopRouteCard" class="card">
+                <h3 id="stopRouteHeading">Getting there</h3>
+                <p id="stopRouteSummary" class="muted"></p>
+                <div id="stopFacts" class="stopFacts hidden"></div>
+                <ol id="stopRouteSteps" class="routeSteps"></ol>
+              </section>
+
+              <section class="card">
+                <h3>Estimated carbon footprint</h3>
+                <p id="stopFootprint"></p>
+              </section>
+
+            </div>
+
+            <aside class="stopPageSide">
+              <section class="card">
+                <h3>Audio guide</h3>
+                <div id="audioBox"></div>
+              </section>
+
+              <section class="card">
+                <h3>Sustainability tips</h3>
+                <ul id="tips" class="list"></ul>
+                <p id="sdgNote" class="muted sdgNote hidden"></p>
+              </section>
+            </aside>
+
+            <section id="panoramaCard" class="card stopPageWide hidden">
+              <div class="cardHeadInline">
+                <h3>360 view</h3>
+                <button id="panoramaOpenBtn" class="ghostBtn small" type="button">Open 360 view</button>
+              </div>
+              <p id="panoramaCaption" class="muted">Pan around this location in an immersive view.</p>
+              <div id="panoramaList" class="panoramaList"></div>
+            </section>
+
+            <section class="card stopPageWide">
+              <h3>Photos</h3>
+              <div id="gallery" class="gallery"></div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+  </section>
+
+  <div id="galleryLightbox" class="lightbox" aria-hidden="true">
+    <div class="lightboxChrome">
+      <div class="lightboxMeta">
+        <div id="lightboxTitle" class="lightboxTitle">Photo gallery</div>
+        <div id="lightboxCounter" class="lightboxCounter">1 / 1</div>
+      </div>
+      <button id="lightboxClose" class="lightboxIconBtn" aria-label="Close gallery">✕</button>
+    </div>
+
+    <button id="lightboxPrev" class="lightboxNav lightboxPrev" aria-label="Previous photo"><span>‹</span></button>
+    <div id="lightboxStage" class="lightboxStage">
+      <img id="lightboxImage" class="lightboxImage" src="" alt="" />
+    </div>
+    <button id="lightboxNext" class="lightboxNav lightboxNext" aria-label="Next photo"><span>›</span></button>
+  </div>
+
+  <div id="panoramaViewer" class="panoramaViewer" aria-hidden="true">
+    <div class="panoramaChrome">
+      <div class="panoramaMeta">
+        <div id="panoramaTitle" class="panoramaTitle">360 view</div>
+        <div id="panoramaCounter" class="panoramaCounter">1 / 1</div>
+      </div>
+      <button id="panoramaClose" class="lightboxIconBtn" aria-label="Close 360 view">✕</button>
+    </div>
+
+    <button id="panoramaPrev" class="lightboxNav lightboxPrev" aria-label="Previous panorama"><span>‹</span></button>
+    <div id="panoramaStage" class="panoramaStage">
+      <div id="panoramaCanvas" class="panoramaCanvas" role="img" aria-label="Interactive 360 panorama"></div>
+      <div class="panoramaHint">Drag or swipe to look around</div>
+    </div>
+    <button id="panoramaNext" class="lightboxNav lightboxNext" aria-label="Next panorama"><span>›</span></button>
+  </div>
+</body>
+</html>
