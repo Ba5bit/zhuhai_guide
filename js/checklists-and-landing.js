@@ -59,7 +59,7 @@ function updateStopTodoButton(dayObj, stop) {
   if (!btn || !dayObj || !stop) return;
   const added = isStopInTodo(dayObj, stop);
   btn.classList.toggle("is-added", added);
-  btn.textContent = added ? "âœ“ Added to to-do list" : "âœ“ Add to to-do list";
+  btn.textContent = added ? "Added" : "Add to trip";
   btn.setAttribute("aria-pressed", added ? "true" : "false");
 }
 
@@ -77,7 +77,7 @@ function syncLandingSelection(dayKey, expandCard = false) {
   const selectedDayEl = document.getElementById("landingSelectedDay");
   const selectedSummaryEl = document.getElementById("landingSelectedSummary");
 
-  if (landingCta) landingCta.textContent = `Open ${meta.title} on map`;
+  if (landingCta) landingCta.textContent = "Open the map";
   if (selectedDayEl) selectedDayEl.textContent = meta.title;
   if (selectedSummaryEl) selectedSummaryEl.textContent = meta.summary;
 

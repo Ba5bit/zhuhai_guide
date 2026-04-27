@@ -31,8 +31,7 @@
       stop.admission ? { label: "Admission", value: stop.admission } : null,
       stop.difficulty ? { label: "Difficulty", value: stop.difficulty } : null,
       stop.distance ? { label: "Distance", value: stop.distance } : null,
-      stop.duration ? { label: "Duration", value: stop.duration } : null,
-      stop.latlng ? { label: "Coordinates", value: stop.latlng.join(", ") } : null
+      stop.duration ? { label: "Duration", value: stop.duration } : null
     ].filter(Boolean);
     stopFacts.innerHTML = "";
     stopFacts.classList.toggle("hidden", !facts.length);
@@ -104,7 +103,7 @@ function renderDefaultDayInfo(dayObj) {
   const todoBtn = document.getElementById("stopTodoBtn");
   if (todoBtn) {
     todoBtn.classList.remove("is-added");
-    todoBtn.textContent = "âœ“ Add to to-do list";
+    todoBtn.textContent = "Add to trip";
     todoBtn.setAttribute("aria-pressed", "false");
   }
 }

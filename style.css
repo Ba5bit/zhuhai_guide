@@ -348,7 +348,7 @@ body.panorama-open{overflow:hidden}
   body{overflow:hidden}
   .desktopOnly,.floatingBrand,.legendCard,.panel,.menuFab{display:none}
   .floatingControls{top:12px;left:12px;right:12px;display:flex;gap:8px;max-width:none}
-  .pillBtn{padding:11px 14px;font-size:14px}
+  .pillBtn{min-width:72px;padding:11px 14px;font-size:14px}
   .mobileBackdrop{display:block;position:absolute;inset:0;background:rgba(20,29,38,.18);z-index:998;opacity:0;pointer-events:none;transition:opacity .24s ease}
   .mobileBackdrop.is-open{opacity:1;pointer-events:auto}
   .mobileSheet{display:block}
@@ -370,12 +370,12 @@ body.panorama-open{overflow:hidden}
 .floatingBrand,.panel,#mobileSheet{display:none!important}
 .mobileOnly{display:none}
 .desktopOnly{display:block}
-.fabBtn{position:absolute;z-index:1200;width:56px;height:56px;border-radius:999px;border:1px solid rgba(120,135,158,.18);background:rgba(255,255,255,.94);box-shadow:0 14px 36px rgba(24,39,75,.14);display:grid;place-items:center;font-size:1.45rem;color:var(--text);cursor:pointer}
+.fabBtn{position:absolute;z-index:1200;min-width:74px;height:48px;padding:0 16px;border-radius:999px;border:1px solid rgba(120,135,158,.18);background:rgba(255,255,255,.94);box-shadow:0 14px 36px rgba(24,39,75,.14);display:grid;place-items:center;font-size:.9rem;font-weight:800;color:var(--text);cursor:pointer;white-space:nowrap;line-height:1}
 .menuFab{top:24px;left:24px}
-.todoFab{top:24px;left:92px;font-size:1.2rem}
-.suggestedFab{top:24px;left:160px;font-size:1.2rem}
+.todoFab{top:24px;left:110px}
+.suggestedFab{top:24px;left:196px}
 .floatingControls{position:absolute;top:16px;right:16px;z-index:1200;display:flex;gap:12px;padding:0}
-.pillBtn{padding:16px 22px;border-radius:999px;border:1px solid rgba(22,119,183,.18);background:rgba(255,255,255,.94);font-size:1rem;box-shadow:0 8px 26px rgba(24,39,75,.10)}
+.pillBtn{min-width:88px;padding:14px 18px;border-radius:999px;border:1px solid rgba(22,119,183,.18);background:rgba(255,255,255,.94);font-size:1rem;font-weight:700;box-shadow:0 8px 26px rgba(24,39,75,.10);white-space:nowrap;text-align:center}
 .pillBtn.active{background:var(--accent-soft);border-color:rgba(22,119,183,.28);color:var(--accent-deep)}
 .overlayDrawer{position:absolute;z-index:1190;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(120,135,158,.16);border-radius:28px;box-shadow:0 22px 55px rgba(24,39,75,.16);padding:20px 18px;overflow:auto}
 .legendDrawer{left:24px;top:94px;width:380px;max-height:calc(100vh - 118px)}
@@ -533,7 +533,7 @@ body.panorama-open{overflow:hidden}
   .utilityFab.secondary{right:18px}
   .utilityFab.tertiary{right:150px}
   .floatingControls{top:14px;right:12px;gap:8px;max-width:calc(100vw - 24px)}
-  .pillBtn{padding:12px 16px;font-size:.94rem}
+  .pillBtn{min-width:72px;padding:12px 16px;font-size:.94rem}
   .utilitySheet{display:block;position:absolute;left:0;right:0;bottom:0;z-index:1250;background:rgba(255,255,255,.98);border-radius:24px 24px 0 0;box-shadow:0 -20px 55px rgba(24,39,75,.2);padding:10px 14px calc(18px + env(safe-area-inset-bottom));max-height:75vh;overflow:auto;transform:translateY(0);transition:transform .24s cubic-bezier(.22,.9,.24,1);will-change:transform;touch-action:pan-y}
   .utilitySheet.hidden{display:none!important}
   .utilitySheetHeader{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:10px}

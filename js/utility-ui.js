@@ -56,7 +56,7 @@ function renderDefaultDayInfo(dayObj) {
   const todoBtn = document.getElementById("stopTodoBtn");
   if (todoBtn) {
     todoBtn.classList.remove("is-added");
-    todoBtn.textContent = "âœ“ Add to to-do list";
+    todoBtn.textContent = "Add to trip";
     todoBtn.setAttribute("aria-pressed", "false");
   }
 }
