@@ -348,7 +348,7 @@ body.panorama-open{overflow:hidden}
   body{overflow:hidden}
   .desktopOnly,.floatingBrand,.legendCard,.panel,.menuFab{display:none}
   .floatingControls{top:12px;left:12px;right:12px;display:flex;gap:8px;max-width:none}
-  .pillBtn{min-width:72px;padding:11px 14px;font-size:14px}
+  .pillBtn{min-width:62px;padding:9px 12px;font-size:12px}
   .mobileBackdrop{display:block;position:absolute;inset:0;background:rgba(20,29,38,.18);z-index:998;opacity:0;pointer-events:none;transition:opacity .24s ease}
   .mobileBackdrop.is-open{opacity:1;pointer-events:auto}
   .mobileSheet{display:block}
@@ -529,11 +529,11 @@ body.panorama-open{overflow:hidden}
   .menuFab{display:none}
   .todoFab{display:none}
   .suggestedFab{display:none}
-  .utilityFab{display:grid;position:absolute;z-index:1200;bottom:22px;right:84px;width:54px;height:54px;font-size:1.25rem}
+  .utilityFab{display:grid;position:absolute;z-index:1200;bottom:22px;right:84px;min-width:62px;width:auto;height:auto;padding:9px 12px;border-radius:999px;border:1px solid rgba(22,119,183,.18);background:rgba(255,255,255,.94);box-shadow:0 8px 26px rgba(24,39,75,.10);font-size:.8rem;font-weight:700;color:var(--text);line-height:1;white-space:nowrap}
   .utilityFab.secondary{right:18px}
   .utilityFab.tertiary{right:150px}
   .floatingControls{top:14px;right:12px;gap:8px;max-width:calc(100vw - 24px)}
-  .pillBtn{min-width:72px;padding:12px 16px;font-size:.94rem}
+  .pillBtn{min-width:62px;padding:9px 12px;font-size:.8rem}
   .utilitySheet{display:block;position:absolute;left:0;right:0;bottom:0;z-index:1250;background:rgba(255,255,255,.98);border-radius:24px 24px 0 0;box-shadow:0 -20px 55px rgba(24,39,75,.2);padding:10px 14px calc(18px + env(safe-area-inset-bottom));max-height:75vh;overflow:auto;transform:translateY(0);transition:transform .24s cubic-bezier(.22,.9,.24,1);will-change:transform;touch-action:pan-y}
   .utilitySheet.hidden{display:none!important}
   .utilitySheetHeader{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:10px}

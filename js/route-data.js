@@ -45,7 +45,7 @@ const day1 = {
         "Take Fully Electric Bus Z58 toward Erjingwan Wetland.",
         "Ride 6 stops to Erjingwan Wetland Park Stop."
       ],
-      photos: [],
+      photos: [`${zhuhaiPhotoBase}/hotel/hotel.jpg`],
       websiteUrl: "https://maps.app.goo.gl/D4AVjTXSGqnKrfkP6",
       websiteLabel: "Google Maps",
       footprint: "First segment: 8.2 km by walking plus fully electric bus, about 0.12 kg CO2.",
@@ -191,7 +191,7 @@ const day1 = {
       shortInfo: "A large shopping and dining hub in Xiangzhou District on Jinfeng North Road, useful for meals, retail, supermarket access, and rest areas.",
       websiteUrl: "https://www.google.com/maps/search/?api=1&query=Zhuhai%20Powerlong%20Plaza%20Jinfeng%20North%20Road",
       websiteLabel: "Google Maps",
-      photos: []
+      photos: [`${zhuhaiPhotoBase}/plaza/plaza.jpg`]
     },
     {
       id: "yexiang-yipin",
