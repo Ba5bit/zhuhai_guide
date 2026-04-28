@@ -160,7 +160,7 @@ button,input,select,textarea{font:inherit}
 .sheetHandle{width:54px;height:6px;border-radius:999px;background:#d7dee6;margin:10px auto 6px}
 .mobileSheetHeader{display:flex;gap:12px;justify-content:space-between;align-items:flex-start;padding:6px 16px 12px;border-bottom:1px solid rgba(120,135,158,.12)}
 .mobileSheetHeaderActions{display:flex;gap:8px;align-items:center}
-.mobileCloseBtn{width:38px;height:38px;border-radius:999px;border:0;background:#eef2f5}
+.mobileCloseBtn{min-width:62px;width:auto;height:auto;padding:9px 12px;border-radius:999px;border:0;background:#eef2f5;box-shadow:0 8px 26px rgba(24,39,75,.10);font-size:.8rem;font-weight:700;color:var(--text);line-height:1;white-space:nowrap}
 .mobileSheetBody{height:calc(100% - 100px);overflow:auto;padding:14px 14px 28px}
 .mobileLegendCard{display:none}
 
